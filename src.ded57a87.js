@@ -11,8 +11,8 @@ var e,t=arguments[3];!function(t,r){"object"==typeof exports&&"object"==typeof m
 },{"handlebars/dist/handlebars.runtime":"pAws"}],"i0CD":[function(require,module,exports) {
 "use strict";var e=u(require("./menu.json")),t=u(require("../templates/menu.hbs"));function u(e){return e&&e.__esModule?e:{default:e}}const n=document.querySelector(".js-menu"),r=(0,t.default)(e.default);n.insertAdjacentHTML("beforeend",r);
 },{"./menu.json":"NkM5","../templates/menu.hbs":"dgbP"}],"qwQt":[function(require,module,exports) {
-const e={LIGHT:"light-theme",DARK:"dark-theme"},t=document.querySelector("body");t.classList.toggle(e.LIGHT);const o=document.getElementById("theme-switch-toggle");function c(){t.classList.toggle(e.DARK)?o.setAttribute("checked",""):o.removeAttribute("checked"),localStorage.setItem("theme","Theme.DARK")}function m(){localStorage.getItem("theme","Theme.DARK")&&c(),localStorage.removeItem("theme")}o.addEventListener("change",c),m();
+const e={LIGHT:"light-theme",DARK:"dark-theme"},t=document.querySelector("body");t.classList.toggle(e.LIGHT);const c=document.getElementById("theme-switch-toggle");function o(){t.classList.toggle(e.DARK)?c.setAttribute("checked",""):c.removeAttribute("checked"),localStorage.setItem("theme","Theme.DARK")}function m(){localStorage.getItem("theme","Theme.DARK")&&o()}c.addEventListener("change",o),m();
 },{}],"Focm":[function(require,module,exports) {
 "use strict";require("./sass/main.scss"),require("./js/menu"),require("./js/theme");
 },{"./sass/main.scss":"clu1","./js/menu":"i0CD","./js/theme":"qwQt"}]},{},["Focm"], null)
-//# sourceMappingURL=/goit-js-hw-10-food-service/src.dc2850ae.js.map
+//# sourceMappingURL=/goit-js-hw-10-food-service/src.ded57a87.js.map
