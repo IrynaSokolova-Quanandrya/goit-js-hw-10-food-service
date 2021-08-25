@@ -22,7 +22,7 @@ function savedTheme() {
     if (localStorage.getItem('theme', 'Theme.DARK')) {
         onInputChange();
     }
-    localStorage.removeItem('theme');
+    // localStorage.removeItem('theme');
 }
 savedTheme();
   
