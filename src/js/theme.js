@@ -3,26 +3,24 @@ const Theme = {
   DARK: 'dark-theme',
 };
 
-const body = document.querySelector('body');
-body.classList.toggle(Theme.LIGHT);
-
 const input = document.getElementById('theme-switch-toggle');
+const body = document.querySelector('body');
+const currentTheme = localStorage.getItem('currentTheme');
 
+input.addEventListener('change', onChange)
+function onChange() {
+    body.classList.toggle(Theme.DARK);
+    body.classList.toggle(Theme.LIGHT);
+    localStorage.setItem('currentTheme', body.classList[0])
+} 
 
-input.addEventListener('change', onInputChange);
-function onInputChange() {
-        
-        const theme = body.classList.toggle(Theme.DARK);
-        theme ? input.setAttribute('checked', '') : input.removeAttribute('checked');
-    localStorage.setItem('theme', 'Theme.DARK');
-    
-};
- 
-function savedTheme() {
-    if (localStorage.getItem('theme', 'Theme.DARK')) {
-        onInputChange();
-    }
-    // localStorage.removeItem('theme');
+if (currentTheme === null) {
+    localStorage.setItem('currentTheme', Theme.LIGHT);
+    body.classList.add(Theme.LIGHT);
+} else {
+    body.classList.add(currentTheme)
 }
-savedTheme();
-  
+if (currentTheme === Theme.DARK) {
+    input.setAttribute('checked', '')
+};
+
